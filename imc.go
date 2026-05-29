@@ -26,6 +26,7 @@ func main() {
 	fmt.Scan(&taille)
 	IMC := poids / (taille * taille)
 	fmt.Printf("Votre IMC est de : %2f \n", IMC)
+	// version if
 	if IMC < IMCMaigreur {
 		fmt.Println("Maigreur")
 	} else if IMC >= IMCMaigreur && IMC < IMCNormal {
@@ -35,4 +36,16 @@ func main() {
 	} else {
 		fmt.Println("Obésité")
 	}
+	// Version switch
+	switch {
+	case IMC < IMCMaigreur:
+		fmt.Println("Maigreur")
+	case IMC >= IMCMaigreur && IMC < IMCNormal:
+		fmt.Println("Normal")
+	case IMC >= IMCNormal && IMC < IMCSurpoids:
+		fmt.Println("Surpoids")
+	default:
+		fmt.Println("Obésité")
+	}
+
 }
